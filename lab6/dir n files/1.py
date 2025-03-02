@@ -5,7 +5,8 @@ def list_directories_files(path):
     
     for entry in os.listdir(path):
         full_path = os.path.join(path, entry)
-        print("   ", full_path)  
+        if os.path.isdir(full_path): 
+            print("   ", entry)  
 
     print("\nFiles:")
     for entry in os.listdir(path):
@@ -19,6 +20,6 @@ def list_directories_files(path):
         for file in files:
             print("   ",os.path.join(root, file))
 
-path = "/Users/tamilana/Desktop/PP2/pp22/lab6/dir n files"
+path = "/Users/tamilana/Desktop/PP2/pp22/lab6"
 
 list_directories_files(path)
