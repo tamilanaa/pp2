@@ -5,3 +5,4 @@ cnt = 0
 for lines in f:
     cnt += 1
 print(f"file has {cnt} lines")
+f.close()
