@@ -3,9 +3,9 @@ from insert import insert_from_console, insert_from_csv
 from update import update_contact
 from query import query_contacts
 from delete import delete_contact
-from pagination import paginate_query
-from delete_by import delete_by
-from search_pattern import search_by_pattern
+
+from l11 import delete_by, paginate_contacts, search_by_pattern
+
 
 def main_menu():
     init_db()
@@ -39,10 +39,11 @@ def main_menu():
         elif choice == '6':
             limit = int(input("Enter limit (how many rows): "))
             offset = int(input("Enter offset (starting from which row): "))
-            paginate_query('contacts', limit, offset) 
+            paginate_contacts(limit, offset) 
 
         elif choice == "7":
             delete_by()
+
         elif choice == "8":
             pattern = input("Enter part of name, surname or phone: ")
             search_by_pattern(pattern)
